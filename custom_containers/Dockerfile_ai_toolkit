@@ -1,3 +1,4 @@
-FROM chronis10/teaching-ai-toolkit:${ARCH:-amd64}
+ARG ARCH=amd64
+FROM chronis10/teaching-ai-toolkit:${ARCH}
 
-RUN pip3 install tensorflow-addons
+RUN pip3 install numpy

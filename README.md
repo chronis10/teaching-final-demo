@@ -10,7 +10,7 @@ export ARCH=arm64
 
 # Extend the Dockerfile with custom dependencies
 cd custom_containers
-docker build -f Dockerfile_ai_toolkit -t chronis10/teaching-ai-toolkit:${ARCH:-amd64} .
+docker build --build-arg ARCH=${ARCH:-amd64} -f Dockerfile_ai_toolkit -t chronis10/teaching-ai-toolkit:${ARCH:-amd64} .
 cd ..
 
 docker compose up
@@ -19,7 +19,7 @@ docker compose up
 ### Develop
 1. Use the custom_modules/rl_graz_module.py file as a template to create your custom script AI-toolkit module. Save it, for instance, in the custom_modules/ directory.
 
-2. Create your custom Dockerfile. If you have additional dependencies like tensorflow-addons, use custom_containers/Dockerfile_ai_toolkit as a template.
+2. Create your custom Dockerfile. If you have additional dependencies like numpy, use custom_containers/Dockerfile_ai_toolkit as a template.
 
 3. Modify or create a new docker-compose file.
 

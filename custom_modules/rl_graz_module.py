@@ -2,7 +2,6 @@ import os
 import threading
 
 import tensorflow as tf
-import tensorflow_addons as tfa
 import numpy as np
 import time
 
@@ -39,7 +38,7 @@ class RLModule(LearningModule):
 
     def _build(self):
         super(RLModule, self)._build()        
-        self._model = tf.keras.models.load_model(self._model_path, custom_objects={'AdamW':tfa.optimizers.AdamW})
+        self._model = tf.keras.models.load_model(self._model_path)
         self._model.summary()
         self._aggregator = Aggregator()
         if self.federated:
