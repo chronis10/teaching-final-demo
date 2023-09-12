@@ -1,0 +1,3 @@
+FROM chronis10/teaching-ai-toolkit:amd64
+
+RUN pip3 install tensorflow-addons
