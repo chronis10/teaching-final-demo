@@ -13,7 +13,7 @@ cd custom_containers
 docker build --build-arg ARCH=${ARCH:-amd64} -f Dockerfile_ai_toolkit -t chronis10/teaching-ai-toolkit:${ARCH:-amd64} .
 cd ..
 
-docker compose up
+docker-compose up
 ```
 
 ### Develop
